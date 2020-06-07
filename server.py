@@ -11,7 +11,10 @@ file_users = './users.json'
 file_messages = './messages.json'
 fmt = '%a %d %b %Y %H:%M:%S %Z'  # формат вывода даты
 tz = pytz.timezone('Europe/Moscow')  # установка таймзоны
-locale.setlocale(locale.LC_ALL, ('RU', 'UTF8'))
+
+locale.setlocale(locale.LC_ALL, 'RU')  # локализация (для даты на русском)
+# locale.setlocale(locale.LC_ALL, ('RU', 'UTF8'))
+
 token_trans_ya = os.environ['token_trans_ya']
 url_trans = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
 
