@@ -1,2 +1,2 @@
-web: gunicorn deploy: server
+web: gunicorn deploy: server.py
 
