@@ -1,0 +1,9 @@
+venv
+.idea
+my_*
+my_temp/
+__pycache__/
+*.pyc
+build
+dist
+

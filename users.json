@@ -1,0 +1,22 @@
+{
+  "": {
+    "lang_code": "",
+    "password": "54321"
+  },
+  "John": {
+    "lang_code": "ru",
+    "password": "12"
+  },
+  "dsd": {
+    "lang_code": "fr",
+    "password": "dsd"
+  },
+  "marat": {
+    "lang_code": "tt",
+    "password": "1"
+  },
+  "Петя": {
+    "lang_code": "ru",
+    "password": "1"
+  }
+}
