@@ -1,20 +1,5 @@
 [
   {
-    "text": "How are you live&\n ru: Как ты живут и\n",
-    "timestamp": 1591220261.450924,
-    "username": "John"
-  },
-  {
-    "text": "How are you live?\n\n ru: Как вы живете?\n\n",
-    "timestamp": 1591220284.690553,
-    "username": "John"
-  },
-  {
-    "text": "Отлично\n en: Well\n",
-    "timestamp": 1591220304.0339148,
-    "username": "marat"
-  },
-  {
     "text": "ok\n ru: ОК\n",
     "timestamp": 1591220367.0223944,
     "username": "John"
@@ -497,6 +482,21 @@
   {
     "text": "Завтра понедельник, вернее сегодня\n🗺 tt : Иртәгә дүшәмбе, дөресрәге бүген\n",
     "timestamp": 1591565212.073478,
+    "username": "marat"
+  },
+  {
+    "text": "Привет\n🗺 tt : Сәлам\n",
+    "timestamp": 1591614626.2568269,
+    "username": "marat"
+  },
+  {
+    "text": "/L en\n",
+    "timestamp": 1591614644.8437397,
+    "username": "marat"
+  },
+  {
+    "text": "На выходе этой команды мы получим\n🗺 en : The output of this command we get\n",
+    "timestamp": 1591614695.746067,
     "username": "marat"
   }
 ]
