@@ -4,8 +4,8 @@ import requests
 from PyQt5 import QtWidgets, QtCore
 import clientui
 
-url_server = 'http://127.0.0.1:5000'
-# url_server = 'https://traleevali.herokuapp.com'
+# url_server = 'http://127.0.0.1:5000'
+url_server = 'https://traleevali.herokuapp.com'
 
 fmt = "%a %d %b %Y %H:%M:%S %Z"  # формат вывода даты
 tz = pytz.timezone('Europe/Moscow')  # установка таймзоны
