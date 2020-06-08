@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from datetime import datetime
 import pytz
 import requests
@@ -7,8 +5,9 @@ from PyQt5 import QtWidgets, QtCore
 import clientui
 
 url_server = 'http://127.0.0.1:5000'
-# url_server = 'https://djherok.herokuapp.com/si/'
-fmt = '%a %d %b %Y %H:%M:%S %Z'  # формат вывода даты
+# url_server = 'https://traleevali.herokuapp.com'
+
+fmt = "%a %d %b %Y %H:%M:%S %Z"  # формат вывода даты
 tz = pytz.timezone('Europe/Moscow')  # установка таймзоны
 
 
@@ -17,8 +16,7 @@ class ExampleApp(QtWidgets.QMainWindow, clientui.Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.url = url
-        # self.label_2.setText(url)
-        self.label_2.setText('https://djherok.herokuapp.com')
+        self.label_2.setText(url)
 
         self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)  # для точек при вводе пароля
 
@@ -28,19 +26,14 @@ class ExampleApp(QtWidgets.QMainWindow, clientui.Ui_MainWindow):
         self.last_timestamp = 0
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_messages)
-        # self.timer.timeout(self.update_messages)
-        self.timer.start(5000)
+        self.timer.start(3000)
 
     def send_message(self, text_help=''):
         username = self.lineEdit.text()
         password = self.lineEdit_2.text()
+        # text = self.textEdit.toPlainText()
 
         text = self.textEdit.toPlainText() if text_help != '/help' else text_help
-
-        # if text_help == '/help':
-        #     text = '/help'
-        # else:
-        #     text = self.textEdit.toPlainText()
 
         requests.get(
             self.url + '/send_message',
@@ -50,7 +43,6 @@ class ExampleApp(QtWidgets.QMainWindow, clientui.Ui_MainWindow):
                 'text': text
             }
         )
-
         self.textEdit.setText('')
         self.textEdit.repaint()
 
@@ -63,7 +55,6 @@ class ExampleApp(QtWidgets.QMainWindow, clientui.Ui_MainWindow):
 
         for message in messages:
             dt = datetime.fromtimestamp(message['timestamp'])
-            # dt = dt.strftime('%H:%M:%S %d/%m/%Y')
             dt = dt.astimezone(tz).strftime(fmt)
             self.textBrowser.append(dt + ' -- ' + message['username'])
             self.textBrowser.append(message['text'])
@@ -72,8 +63,30 @@ class ExampleApp(QtWidgets.QMainWindow, clientui.Ui_MainWindow):
 
 
 app = QtWidgets.QApplication([])
-# window = ExampleApp('https://c91b347b7872.ngrok.io')
 window = ExampleApp(url_server)
 window.show()
 app.exec_()
+
+
+# -----------------------------------------------
+# Формирование Python файла из UI:
+# pyuic5 messenger.ui -o clientui.py
+# ------------------------
+# Запуск в Python:
+# python messenger.py
+# ------------------------
+# Создание испольняемого файла (в одном файле и без запуска консоли):
+# pyinstaller --onefile --noconsole --icon=/usr/share/icons/tr_vl.ico  messenger.py
+# -----------------------------------------------------------------------------------
+
+# local_launch = bool(os.environ['local_launch'])
+# local_launch = None
+# print('== Local Launch: ', local_launch)
+# if local_launch:
+#     url_server = 'http://127.0.0.1:5000'
+# else:
+#     url_server = 'https://traleevali.herokuapp.com'
+
+# dt = dt.strftime('%H:%M:%S %d/%m/%Y')
+# window = ExampleApp('https://c91b347b7872.ngrok.io')
 

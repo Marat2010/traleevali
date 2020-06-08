@@ -1,45 +1,5 @@
 [
   {
-    "text": "ok\n ru: ОК\n",
-    "timestamp": 1591220367.0223944,
-    "username": "John"
-  },
-  {
-    "text": "I am trying to create a label on which I can display my image and above it a qlabel text for saying this is my input image and then setting both of them in vertical layout. But text always gets allign to the left. I also tried allign the text at the centre and then apply vertical layout but doesn't work. I am using Qt designer.\nI also used horizontal spacer with qlabel text and set them to horizontal layout, then adding horizontal layout and image display label in vertical layout but nothing seems to work.\nIs there any better way to do that.\n ru: Я пытаюсь создать ярлык, на котором я могу показать мои изображения и выше его qlabel текстом говорю, что это мой входного изображения и затем установив их в вертикальной планировкой. Но текст всегда попадает выровнять влево. Я также попытался выровнять текст по центру, а затем применить вертикальную компоновку, но не работает. Я использую конструктор для Qt.\nЯ также использовал горизонтальная проставка с qlabel текст и установите их в горизонтальное расположение, затем добавить горизонтальное расположение и метка отображения изображения в вертикальном расположении, но ничего не похоже на работу.\nЕсть ли лучший способ сделать это.\n",
-    "timestamp": 1591220569.330222,
-    "username": "John"
-  },
-  {
-    "text": "I am trying to create a label \n <b>ru:</b> Я пытаюсь создать ярлык \n",
-    "timestamp": 1591220731.014938,
-    "username": "John"
-  },
-  {
-    "text": "I am trying to create a label \n ___ru___:</b> Я пытаюсь создать ярлык \n",
-    "timestamp": 1591220824.2114556,
-    "username": "John"
-  },
-  {
-    "text": "hi\n 🔠 ___ru___: привет\n",
-    "timestamp": 1591221177.9940174,
-    "username": "John"
-  },
-  {
-    "text": "well\n 🔠 ___ru___🗺: ну\n",
-    "timestamp": 1591221492.7725456,
-    "username": "John"
-  },
-  {
-    "text": "loop\n🗺 - ru : петли\n",
-    "timestamp": 1591221574.452046,
-    "username": "John"
-  },
-  {
-    "text": "Привет\n🗺 en : Hi\n",
-    "timestamp": 1591222022.1959517,
-    "username": "marat"
-  },
-  {
     "text": "/L",
     "timestamp": 1591222070.0693052,
     "username": "marat"
@@ -497,6 +457,46 @@
   {
     "text": "На выходе этой команды мы получим\n🗺 en : The output of this command we get\n",
     "timestamp": 1591614695.746067,
+    "username": "marat"
+  },
+  {
+    "text": "Привет!\n\n🗺 en : Hi!\n\n",
+    "timestamp": 1591631431.8341086,
+    "username": "marat"
+  },
+  {
+    "text": "/L es",
+    "timestamp": 1591631447.513575,
+    "username": "marat"
+  },
+  {
+    "text": "Жизнь\n🗺 es : La vida\n",
+    "timestamp": 1591631459.695085,
+    "username": "marat"
+  },
+  {
+    "text": "Следует отметить одну вещь\n🗺 es : Cabe señalar una cosa\n",
+    "timestamp": 1591631474.7608366,
+    "username": "marat"
+  },
+  {
+    "text": "  Чат-Бот с переводчиком для общения с иностранцем.\nЧтобы ваши сообщения дублировалиcь на другом языке наберите \"/L **\" , где вместо ** подставить код языка: ru, en, de, fr, zh, ja, ar, ... .\n   Коды языков здесь:\n\"https://yandex.ru/dev/translate/doc/dg/concepts/api-overview-docpage/#api-overview__languages\" .\n  После все сообщения будут с переводом на выбранном языке.\nЧтобы убрать перевод введите просто \"/L\" без кода\n\n🗺 es :  Chat Bot con un intérprete para comunicarse con el extranjero.\nPara que tus mensajes se duplicaban en otro idioma, escriba \"/L **\" , donde en lugar de ** sustituir el código de idioma: es, en, de, fr, zh, ja, ar, ... .\n Códigos de idiomas aquí:\n\"https://yandex.ru/dev/translate/doc/dg/concepts/api-overview-docpage/#api-overview__languages\" .\n Después de todos los mensajes serán con la traducción en el idioma seleccionado.\nPara eliminar la traducción escriba simplemente \"/L\" sin código\n\n",
+    "timestamp": 1591631480.4506748,
+    "username": "marat"
+  },
+  {
+    "text": "/L en",
+    "timestamp": 1591631490.6737611,
+    "username": "marat"
+  },
+  {
+    "text": "Следует отметить одну вещь\n🗺 en : It should be noted one thing\n",
+    "timestamp": 1591631495.4077828,
+    "username": "marat"
+  },
+  {
+    "text": "Для установки новой локали используйте:\n🗺 en : To install the new locale use:\n",
+    "timestamp": 1591631510.6284146,
     "username": "marat"
   }
 ]

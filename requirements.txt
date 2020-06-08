@@ -11,9 +11,8 @@ Jinja2==2.11.2
 MarkupSafe==1.1.1
 post==2019.4.13
 public==2019.4.13
-#PyInstaller==3.6
-#PyQt5==5.15.0
-#PyQt5-sip==12.8.0
+PyQt5==5.15.0
+PyQt5-sip==12.8.0
 pytz==2020.1
 query-string==2019.4.13
 requests==2.23.0

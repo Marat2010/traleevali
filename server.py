@@ -146,37 +146,6 @@ if __name__ == '__main__':
     app.run()  # запуск приложения
 
 
-# print('---=== Запись в файл: ', filename)
-# answer_tr = r['text'][0] if r['code'] == 200 else '---*** Could not translate ***---'
-
-# if len(ll) > 1:
-#     users[username]['lang_code'] = ll[1]
-# else:
-#     users[username]['lang_code'] = ''
-
-# answer_tr = msg
-# if not language_code == 'ru':
-# if language_code != 'ru':
-
-# if '/L' in text:
-#     ll = text.split()
-#     if len(ll) > 2:
-#         lang_code = ll[1]
-#         msg = ' '.join(ll[2:])
-#         tr_msg = transl_msg(msg, lang_code)
-#         text += '\n {}: {}\n'.format(lang_code, tr_msg)
-
-# msg = ' '.join(ll[2:])
-# except FileNotFoundError (json.JSONDecodeError):
-# messages = [
-#     {'username': 'jack', 'text': 'Hello Jack', 'timestamp': time.time()},
-#     {'username': 'jack2', 'text': 'Hello Jack2', 'timestamp': time.time()}
-# ]
-# users = {
-#     'jack': '12345',
-#     'jack2': '1234'}
-
 # locale.setlocale(locale.LC_ALL, ('RU', 'UTF8'))
 # locale.setlocale(locale.LC_ALL, 'RU')  # локализация (для даты на русском)
-
 
