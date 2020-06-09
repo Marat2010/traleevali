@@ -16,7 +16,7 @@ AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID_TRALEE']
 AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY_TRALEE']
 region = 'us-east-2'
 AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME_TRALEE']  # S3_BUCKET_NAME = 'traleevali'
-AWS_URL = 'https://djherok.s3.us-east-2.amazonaws.com/'
+# AWS_URL = 'https://djherok.s3.us-east-2.amazonaws.com/'
 AWS_URL = 'https://traleevali.s3.eu-north-1.amazonaws.com/'
 s3 = boto3.resource('s3')
 
