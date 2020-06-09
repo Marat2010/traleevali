@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['messenger.py'],
-             pathex=['/home/marat/PycharmProjects/messenger'],
+             pathex=['/home/marat/PycharmProjects/traleevali'],
              binaries=[],
              datas=[],
              hiddenimports=[],

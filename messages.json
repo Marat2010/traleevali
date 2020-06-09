@@ -1,120 +1,5 @@
 [
   {
-    "text": "/L",
-    "timestamp": 1591222070.0693052,
-    "username": "marat"
-  },
-  {
-    "text": "pol",
-    "timestamp": 1591222089.3219728,
-    "username": "marat"
-  },
-  {
-    "text": "/L de\n",
-    "timestamp": 1591222116.048466,
-    "username": "marat"
-  },
-  {
-    "text": "спать\n🗺 de : schlafen\n",
-    "timestamp": 1591222132.715129,
-    "username": "marat"
-  },
-  {
-    "text": "/L\n",
-    "timestamp": 1591222164.951068,
-    "username": "marat"
-  },
-  {
-    "text": "Accept\n🗺 ru : Принять\n",
-    "timestamp": 1591223726.27357,
-    "username": "Петя"
-  },
-  {
-    "text": "not hot\n🗺 ru : не жарко\n",
-    "timestamp": 1591223957.0939636,
-    "username": "Петя"
-  },
-  {
-    "text": "1\n",
-    "timestamp": 1591224655.5770786,
-    "username": "marat"
-  },
-  {
-    "text": "1111",
-    "timestamp": 1591226208.5383782,
-    "username": "marat"
-  },
-  {
-    "text": "asass",
-    "timestamp": 1591226215.2303565,
-    "username": "marat"
-  },
-  {
-    "text": "In the direct approach, you simply construct a widget to use as a placeholder for the component, and set up the user interface inside it.\nIn the single inheritance approach, you subclass the form's base class (QWidget or QDialog, for example), and include a private instance of the form's user interface object.\nIn the multiple inheritance approach, you subclass from both the form's base class and the form's user interface object. This allows the widgets defined in the form to be used directly from within the scope of the subclass.",
-    "timestamp": 1591270160.8213136,
-    "username": "marat"
-  },
-  {
-    "text": "/L ru\n",
-    "timestamp": 1591270217.1324763,
-    "username": "marat"
-  },
-  {
-    "text": "In the direct approach, you simply construct a widget to use as a placeholder for the component, and set up the user interface inside it.\nIn the single inheritance approach, you subclass the form's base class (QWidget or QDialog, for example), and include a private instance of the form's user interface object.\nIn the multiple inheritance approach, you subclass from both the form's base class and the form's user interface object. This allows the widgets defined in the form to be used directly from within the scope of the subclass.\n🗺 ru : В прямом подходе, вы просто создайте виджет для использования в качестве заполнителя для компонента, и настройки пользовательского интерфейса внутри него.\nВ один подход наследования, подкласс базового класса формы (от QWidget или qdialog, например), и имеется собственный экземпляр объекта пользовательского интерфейса формы.\nВ несколько подходов наследования, подкласс из базового класса формы и объекта форму пользовательского интерфейса. Это позволяет виджеты, указанные в форме, чтобы использоваться непосредственно в рамках подкласса.\n",
-    "timestamp": 1591270224.0703728,
-    "username": "marat"
-  },
-  {
-    "text": "desk\n\n🗺 ru : рабочий стол\n\n",
-    "timestamp": 1591270550.3698344,
-    "username": "marat"
-  },
-  {
-    "text": "petty\n🗺 ru : мелкие\n",
-    "timestamp": 1591272270.2167885,
-    "username": "marat"
-  },
-  {
-    "text": "re\n🗺 ru : вновь\n",
-    "timestamp": 1591292101.1072128,
-    "username": "marat"
-  },
-  {
-    "text": "/L ta",
-    "timestamp": 1591293917.8708687,
-    "username": "marat"
-  },
-  {
-    "text": "Как дела?\n\n🗺 ta : அது எப்படி நடக்கிறது?\n\n",
-    "timestamp": 1591293935.8589928,
-    "username": "marat"
-  },
-  {
-    "text": "/L tt",
-    "timestamp": 1591294319.624089,
-    "username": "marat"
-  },
-  {
-    "text": "как дела?\n🗺 tt : ничек эшләр?\n",
-    "timestamp": 1591294330.401829,
-    "username": "marat"
-  },
-  {
-    "text": "Чем занят?\n🗺 tt : Караганда занят?\n",
-    "timestamp": 1591294345.7250862,
-    "username": "marat"
-  },
-  {
-    "text": "чем занимаешься?\n🗺 tt : караганда занимаешься?\n",
-    "timestamp": 1591294372.044327,
-    "username": "marat"
-  },
-  {
-    "text": "Ураган\n🗺 tt : Ураган\n",
-    "timestamp": 1591303470.8192184,
-    "username": "marat"
-  },
-  {
     "text": "стол\n\n🗺 tt : өстәл\n\n",
     "timestamp": 1591303482.339942,
     "username": "marat"
@@ -498,5 +383,120 @@
     "text": "Для установки новой локали используйте:\n🗺 en : To install the new locale use:\n",
     "timestamp": 1591631510.6284146,
     "username": "marat"
+  },
+  {
+    "text": "/USERS\n {'': {'lang_code': '', 'password': '54321'}, 'John': {'lang_code': 'ru', 'password': '12'}, 'dsd': {'lang_code': 'fr', 'password': 'dsd'}, 'marat': {'lang_code': 'en', 'password': '1'}, 'Петя': {'lang_code': 'ru', 'password': '1'}}",
+    "timestamp": 1591700457.7777002,
+    "username": "marat"
+  },
+  {
+    "text": "/USERS\n\n🗺 en : /USERS\n\n",
+    "timestamp": 1591700499.280493,
+    "username": "marat"
+  },
+  {
+    "text": "/USERS \n\n {'': {'lang_code': '', 'password': '54321'}, 'John': {'lang_code': 'ru', 'password': '12'}, 'dsd': {'lang_code': 'fr', 'password': 'dsd'}, 'marat': {'lang_code': 'en', 'password': '1'}, 'Петя': {'lang_code': 'ru', 'password': '1'}}",
+    "timestamp": 1591700530.4332368,
+    "username": "marat"
+  },
+  {
+    "text": "\n🗺 en : ---*** Could not translate ***---\n",
+    "timestamp": 1591704993.4079661,
+    "username": "marat"
+  },
+  {
+    "text": "/L tt\n",
+    "timestamp": 1591705014.2519841,
+    "username": "marat"
+  },
+  {
+    "text": "Если вы уже потратили некоторое время на работу в интерактивных консолях, вам не нужно повторно вводить ранее введенные команды\n🗺 tt : Әгәр сез инде сарыф күпмедер вакыт эшкә интерактив консолях, сезгә кирәк түгел, кабаттан кертергә элегрәк введенные командасы\n",
+    "timestamp": 1591705190.325541,
+    "username": "marat"
+  },
+  {
+    "text": "hello",
+    "timestamp": 1591705288.1974328,
+    "username": "franc"
+  },
+  {
+    "text": "/L fr",
+    "timestamp": 1591705297.3830779,
+    "username": "franc"
+  },
+  {
+    "text": "/USERS\n {'': {'lang_code': '', 'password': '54321'}, 'John': {'lang_code': 'ru', 'password': '12'}, 'dsd': {'lang_code': 'fr', 'password': 'dsd'}, 'marat': {'lang_code': 'tt', 'password': '1'}, 'Петя': {'lang_code': 'ru', 'password': '1'}, 'franc': {'password': '1', 'lang_code': 'fr'}}",
+    "timestamp": 1591705350.7725205,
+    "username": "franc"
+  },
+  {
+    "text": "/L en",
+    "timestamp": 1591705390.1181433,
+    "username": "John"
+  },
+  {
+    "text": "Что делаем\n🗺 en : What we do\n",
+    "timestamp": 1591705407.4613957,
+    "username": "John"
+  },
+  {
+    "text": "Такой пользователь уже есть, или Вы ввели неверный пароль!",
+    "timestamp": 1591705827.145453,
+    "username": ""
+  },
+  {
+    "text": "Такой пользователь уже есть, или Вы ввели неверный пароль!\n🗺 fr : Cet utilisateur a déjà, ou que Vous avez entré le mauvais mot de passe!\n",
+    "timestamp": 1591705841.655175,
+    "username": "dsd"
+  },
+  {
+    "text": "Такой пользователь уже есть, или Вы ввели неверный пароль!\n🗺 tt : Мондый кулланучы бар инде, яки Сез керттек, неверный пароль!\n",
+    "timestamp": 1591705869.3302798,
+    "username": "marat"
+  },
+  {
+    "text": "чтобы прокрутить историю команд\n🗺 tt : өчен прокрутить тарихын командалары\n",
+    "timestamp": 1591705907.1309693,
+    "username": "marat"
+  },
+  {
+    "text": "!!!Такой пользователь уже есть, или Вы ввели неверный пароль!!!\n🗺 tt : !!!Мондый кулланучы бар инде, яки Сез керттек, неверный пароль!!!\n",
+    "timestamp": 1591705949.679029,
+    "username": "marat"
+  },
+  {
+    "text": "---!!!Такой пользователь уже есть, или Вы ввели неверный пароль!!!---",
+    "timestamp": 1591705984.1409624,
+    "username": ""
+  },
+  {
+    "text": "---!!!Такой пользователь уже есть, или Вы ввели неверный пароль!!!---\n🗺 tt : ---!!!Мондый кулланучы бар инде, яки Сез керттек, неверный пароль!!!---\n",
+    "timestamp": 1591705997.0989468,
+    "username": "marat"
+  },
+  {
+    "text": "---!!!Такой пользователь уже есть, или Вы ввели неверный пароль!!!---\n Создайте нового.\n🗺 tt : ---!!!Мондый кулланучы бар инде, яки Сез керттек, неверный пароль!!!---\n Создайте яңа.\n",
+    "timestamp": 1591706078.9707375,
+    "username": "marat"
+  },
+  {
+    "text": "---!!!Такой пользователь уже есть, или Вы ввели неверный пароль!!! Создайте нового!---\n🗺 fr : ---!!!Cet utilisateur a déjà, ou que Vous avez entré le mauvais mot de passe!!! Créez un nouveau!---\n",
+    "timestamp": 1591706138.9069002,
+    "username": "dsd"
+  },
+  {
+    "text": "--** Для такого пользователя, Вы ввели неверный пароль!!! Создайте нового. **--\n🗺 fr : -- * * * * Pour ce faire, Vous avez entré un mauvais mot de passe!!! Créez-en un. **--\n",
+    "timestamp": 1591706256.6830227,
+    "username": "dsd"
+  },
+  {
+    "text": "--** Для такого пользователя, Вы ввели неверный пароль!!! Создайте нового. **--\n🗺 tt : --** Өчен мондый кулланучының, Сез керттек, неверный пароль!!! Создайте яңа. **--\n",
+    "timestamp": 1591706276.040433,
+    "username": "marat"
+  },
+  {
+    "text": "--** Для такого пользователя, Вы ввели неверный пароль!!! Создайте нового. **--\n🗺 en : --** For that user, You have entered the wrong password!!! Create a new. **--\n",
+    "timestamp": 1591706297.875155,
+    "username": "John"
   }
 ]

@@ -6,15 +6,27 @@ import pytz
 import time
 import os
 import requests
+import boto3
+import botocore
 
 file_users = './users.json'
 file_messages = './messages.json'
+
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID_TRALEE']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY_TRALEE']
+region = 'us-east-2'
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME_TRALEE']  # S3_BUCKET_NAME = 'traleevali'
+AWS_URL = 'https://djherok.s3.us-east-2.amazonaws.com/'
+AWS_URL = 'https://traleevali.s3.eu-north-1.amazonaws.com/'
+s3 = boto3.resource('s3')
+
+local_launch = bool(os.environ['local_launch'])
+# local_launch = False
+
 fmt = '%a %d %b %Y %H:%M:%S %Z'  # формат вывода даты
 tz = pytz.timezone('Europe/Moscow')  # установка таймзоны
 
-# locale.setlocale(locale.LC_ALL, 'RU')  # локализация (для даты на русском)
-# locale.setlocale(locale.LC_ALL, ('RU', 'UTF8'))
-locale.setlocale(locale.LC_ALL, 'ru_RU.utf8')
+locale.setlocale(locale.LC_ALL, 'ru_RU.utf8')  # локализация для времени
 
 token_trans_ya = os.environ['token_trans_ya']
 url_trans = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
@@ -23,11 +35,22 @@ server_start = datetime.now(tz).strftime(fmt)
 
 
 def write_json(data, filename=file_messages, wa='w'):
+    print('---=== Запись в файл: ', filename)
     with open(filename, wa) as f:
         json.dump(data, f, indent=2, ensure_ascii=False, sort_keys=True)
+    if not local_launch:
+        print('---=== Запись в файл "local launch" : ', filename)
+        data = open(filename, 'rb')
+        s3.Bucket(AWS_STORAGE_BUCKET_NAME).put_object(Key=filename[2:], Body=data)
 
 
 def read_json(filename=file_messages):
+    # print('---=== Чтение из файла: ', filename)
+    if not local_launch:
+        # print('---=== Чтение из файла: "local launch" ', filename)
+        #  "./bitr24/last_bindings.json" преобразуем в "bitr24/last_bindings.json" так как в AWS S3 путь к ключу файла
+        #  без точек, потому пропуск двух символов -> filename[2:]
+        s3.Bucket(AWS_STORAGE_BUCKET_NAME).download_file(filename[2:], filename)
     with open(filename, 'r') as f:
         r = json.load(f)
     return r
@@ -84,7 +107,8 @@ def send_message():
 
     if username in users:
         if users[username]['password'] != password:
-            return {'ok': False}
+            text = '--** Для такого пользователя, Вы ввели неверный пароль!!! Создайте нового. **--'
+            # return {'ok': False}
     else:
         users[username] = {'password': password, 'lang_code': ''}
         write_json(users, file_users)
@@ -112,6 +136,8 @@ def send_message():
         ll = text.split()
         users[username]['lang_code'] = ll[1] if len(ll) > 1 else ''
         write_json(users, file_users)
+    elif '/USERS' in text:
+        text += '\n {}'.format(users)
     elif users[username]['lang_code']:
         lang_code = users[username]['lang_code']
         tr_msg = transl_msg(text, lang_code)
@@ -146,6 +172,6 @@ if __name__ == '__main__':
     app.run()  # запуск приложения
 
 
-# locale.setlocale(locale.LC_ALL, ('RU', 'UTF8'))
 # locale.setlocale(locale.LC_ALL, 'RU')  # локализация (для даты на русском)
+# locale.setlocale(locale.LC_ALL, ('RU', 'UTF8'))
 

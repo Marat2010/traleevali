@@ -21,12 +21,12 @@ class ExampleApp(QtWidgets.QMainWindow, clientui.Ui_MainWindow):
         self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)  # для точек при вводе пароля
 
         self.pushButton.pressed.connect(self.send_message)
-        self.pushButton_2.pressed.connect(lambda: self.send_message(text_help='/help'))
+        self.pushButton_2.pressed.connect(lambda: self.send_message(text_help='/help'))  # передачи "/help"
 
         self.last_timestamp = 0
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_messages)
-        self.timer.start(3000)
+        self.timer.start(2000)
 
     def send_message(self, text_help=''):
         username = self.lineEdit.text()
