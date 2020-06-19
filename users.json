@@ -3,24 +3,8 @@
     "lang_code": "",
     "password": "54321"
   },
-  "John": {
-    "lang_code": "en",
-    "password": "12"
-  },
-  "dsd": {
-    "lang_code": "fr",
-    "password": "dsd"
-  },
-  "franc": {
-    "lang_code": "fr",
-    "password": "1"
-  },
   "marat": {
     "lang_code": "tt",
     "password": "1"
   },
-  "Петя": {
-    "lang_code": "ru",
-    "password": "1"
-  }
 }
