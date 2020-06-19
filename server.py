@@ -39,7 +39,7 @@ def write_json(data, filename=file_messages, wa='w'):
     with open(filename, wa) as f:
         json.dump(data, f, indent=2, ensure_ascii=False, sort_keys=True)
     if not local_launch:
-        print('---=== Запись в файл "local launch" : ', filename)
+        print('---=== Запись в файл "local launch" на AWS S3: ', filename)
         data = open(filename, 'rb')
         s3.Bucket(AWS_STORAGE_BUCKET_NAME).put_object(Key=filename[2:], Body=data)
 
@@ -47,13 +47,13 @@ def write_json(data, filename=file_messages, wa='w'):
 def read_json(filename=file_messages):
     # print('---=== Чтение из файла: ', filename)
     if not local_launch:
-        print('---=== Чтение из файла: "local launch" ', filename)
+        print('---=== Чтение из файла: "local launch" на AWS S3', filename)
         #  "./bitr24/last_bindings.json" преобразуем в "bitr24/last_bindings.json" так как в AWS S3 путь к ключу файла
         #  без точек, потому пропуск двух символов -> filename[2:]
         s3.Bucket(AWS_STORAGE_BUCKET_NAME).download_file(filename[2:], filename)
     with open(filename, 'r') as f:
         r = json.load(f)
-        print('---=== Чтение из файла "local launch" , Значение r= ', r)
+        print('---=== Чтение из файла "local launch локально" , Значение r= ', r)
     return r
 
 
