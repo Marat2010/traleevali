@@ -20,8 +20,8 @@ AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME_TRALEE']  # S3_BUC
 AWS_URL = 'https://tralee.s3.us-east-2.amazonaws.com/'
 s3 = boto3.resource('s3')
 
-# local_launch = bool(os.environ['local_launch'])
-local_launch = False
+local_launch = bool(os.environ['local_launch'])
+# local_launch = False
 
 fmt = '%a %d %b %Y %H:%M:%S %Z'  # формат вывода даты
 tz = pytz.timezone('Europe/Moscow')  # установка таймзоны
