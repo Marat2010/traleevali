@@ -20,8 +20,8 @@ AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME_TRALEE']  # S3_BUC
 AWS_URL = 'https://traleevali.s3.eu-north-1.amazonaws.com/'
 s3 = boto3.resource('s3')
 
-local_launch = bool(os.environ['local_launch'])
-# local_launch = False
+# local_launch = bool(os.environ['local_launch'])
+local_launch = False
 
 fmt = '%a %d %b %Y %H:%M:%S %Z'  # формат вывода даты
 tz = pytz.timezone('Europe/Moscow')  # установка таймзоны
@@ -47,12 +47,13 @@ def write_json(data, filename=file_messages, wa='w'):
 def read_json(filename=file_messages):
     # print('---=== Чтение из файла: ', filename)
     if not local_launch:
-        # print('---=== Чтение из файла: "local launch" ', filename)
+        print('---=== Чтение из файла: "local launch" ', filename)
         #  "./bitr24/last_bindings.json" преобразуем в "bitr24/last_bindings.json" так как в AWS S3 путь к ключу файла
         #  без точек, потому пропуск двух символов -> filename[2:]
         s3.Bucket(AWS_STORAGE_BUCKET_NAME).download_file(filename[2:], filename)
     with open(filename, 'r') as f:
         r = json.load(f)
+        print('---=== Чтение из файла "local launch" , Значение r= ', r)
     return r
 
 

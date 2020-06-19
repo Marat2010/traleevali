@@ -4,8 +4,8 @@ import requests
 from PyQt5 import QtWidgets, QtCore
 import clientui
 
-# url_server = 'http://127.0.0.1:5000'
-url_server = 'https://traleevali.herokuapp.com'
+url_server = 'http://127.0.0.1:5000'
+# url_server = 'https://traleevali.herokuapp.com'
 
 fmt = "%a %d %b %Y %H:%M:%S %Z"  # формат вывода даты
 tz = pytz.timezone('Europe/Moscow')  # установка таймзоны
@@ -26,7 +26,7 @@ class ExampleApp(QtWidgets.QMainWindow, clientui.Ui_MainWindow):
         self.last_timestamp = 0
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_messages)
-        self.timer.start(2000)
+        self.timer.start(5000)
 
     def send_message(self, text_help=''):
         username = self.lineEdit.text()
