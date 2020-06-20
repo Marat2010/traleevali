@@ -15,7 +15,7 @@ file_messages = './messages.json'
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID_TRALEE']
 AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY_TRALEE']
 region = 'us-east-2'
-AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME_TRALEE']  # S3_BUCKET_NAME = 'traleevali'
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME_TRALEE']  # S3_BUCKET_NAME = 'tralee'
 # AWS_URL = 'https://djherok.s3.us-east-2.amazonaws.com/'
 AWS_URL = 'https://tralee.s3.us-east-2.amazonaws.com/'
 s3 = boto3.resource('s3')
@@ -35,13 +35,14 @@ server_start = datetime.now(tz).strftime(fmt)
 
 
 def write_json(data, filename=file_messages, wa='w'):
-    print('---=== Запись в файл: ', filename)
-    with open(filename, wa) as f:
-        json.dump(data, f, indent=2, ensure_ascii=False, sort_keys=True)
     if not local_launch:
         print('---=== Запись в файл "local launch" на AWS S3: ', filename)
         data = open(filename, 'rb')
         s3.Bucket(AWS_STORAGE_BUCKET_NAME).put_object(Key=filename[2:], Body=data)
+    else:
+        print('---=== Запись в файл локально: ', filename)
+        with open(filename, wa) as f:
+            json.dump(data, f, indent=2, ensure_ascii=False, sort_keys=True)
 
 
 def read_json(filename=file_messages):
@@ -50,10 +51,12 @@ def read_json(filename=file_messages):
         print('---=== Чтение из файла: "local launch" на AWS S3', filename)
         #  "./bitr24/last_bindings.json" преобразуем в "bitr24/last_bindings.json" так как в AWS S3 путь к ключу файла
         #  без точек, потому пропуск двух символов -> filename[2:]
-        s3.Bucket(AWS_STORAGE_BUCKET_NAME).download_file(filename[2:], filename)
-    with open(filename, 'r') as f:
-        r = json.load(f)
-        print('---=== Чтение из файла "local launch локально" , Значение r= ', r)
+        # s3.Bucket(AWS_STORAGE_BUCKET_NAME).download_file(filename[2:], filename)  # Чтение в файл
+        r = s3.Object(AWS_STORAGE_BUCKET_NAME, filename[2:])['Body'].read()  # Чтение сразу в словарь
+    else:
+        with open(filename, 'r') as f:
+            r = json.load(f)
+            print('---=== Чтение из файла "local launch локально" , Значение r= ', r)
     return r
 
 
