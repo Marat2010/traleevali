@@ -52,7 +52,7 @@ def read_json(filename=file_messages):
         #  "./bitr24/last_bindings.json" преобразуем в "bitr24/last_bindings.json" так как в AWS S3 путь к ключу файла
         #  без точек, потому пропуск двух символов -> filename[2:]
         # s3.Bucket(AWS_STORAGE_BUCKET_NAME).download_file(filename[2:], filename)  # Чтение в файл
-        r = s3.Object(AWS_STORAGE_BUCKET_NAME, filename[2:])['Body'].read()  # Чтение сразу в словарь
+        r = s3.Object(AWS_STORAGE_BUCKET_NAME, filename[2:]).get()['Body'].read()  # Чтение сразу в словарь
     else:
         with open(filename, 'r') as f:
             r = json.load(f)
@@ -73,7 +73,7 @@ def transl_msg(msg, language_code):
 try:    # Чтение пользователей и сообщений из файла
     messages = read_json()
     users = read_json(file_users)
-except Exception  as e:
+except Exception as e:
     print('Файлов данных нет, или попорчены! {}'.format(e))
     messages = []
     users = {}
