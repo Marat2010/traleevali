@@ -12,16 +12,22 @@ import botocore
 file_users = './users.json'
 file_messages = './messages.json'
 
-AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID_TRALEE']
-AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY_TRALEE']
+local_launch = bool(os.environ['local_launch'])
+# local_launch = False
+
+if local_launch:
+    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME_TRALEE']  # S3_BUCKET_NAME = 'tralee'
+    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID_TRALEE']
+    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY_TRALEE']
+else:
+    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']  # S3_BUCKET_NAME = 'tralee'
+    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+
 region = 'us-east-2'
-AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME_TRALEE']  # S3_BUCKET_NAME = 'tralee'
 # AWS_URL = 'https://djherok.s3.us-east-2.amazonaws.com/'
 AWS_URL = 'https://tralee.s3.us-east-2.amazonaws.com/'
 s3 = boto3.resource('s3')
-
-local_launch = bool(os.environ['local_launch'])
-# local_launch = False
 
 fmt = '%a %d %b %Y %H:%M:%S %Z'  # формат вывода даты
 tz = pytz.timezone('Europe/Moscow')  # установка таймзоны
