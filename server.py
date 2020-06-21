@@ -25,7 +25,6 @@ else:
     AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 
 region = 'us-east-2'
-# AWS_URL = 'https://djherok.s3.us-east-2.amazonaws.com/'
 AWS_URL = 'https://tralee.s3.us-east-2.amazonaws.com/'
 s3 = boto3.resource('s3')
 
@@ -59,6 +58,7 @@ def read_json(filename=file_messages):
         #  без точек, потому пропуск двух символов -> filename[2:]
         # s3.Bucket(AWS_STORAGE_BUCKET_NAME).download_file(filename[2:], filename)  # Чтение в файл
         r = s3.Object(AWS_STORAGE_BUCKET_NAME, filename[2:]).get()['Body'].read()  # Чтение сразу в словарь
+        r = json.loads(r, encoding='utf-8')
     else:
         with open(filename, 'r') as f:
             r = json.load(f)
@@ -168,10 +168,11 @@ def send_message():
 @app.route('/get_messages/')
 def get_messages():
     after = float(request.args['after'])
-
+    print('--AFTER: ', after)
     result = []
-
+    print('---- Сообщения :', messages, type(messages))
     for message in messages:
+        print('Сообщение :', message, type(message))
         if message['timestamp'] > after:
             result.append(message)
 
